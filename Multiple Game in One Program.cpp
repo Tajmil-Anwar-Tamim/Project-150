@@ -9,7 +9,7 @@
 #define TabM4 cout << "\t\t\t\t ";
 
 #define new   cout << "\n";              ///New Line
-#define Sound cout << "\a";              /// Sound 
+#define Sound cout << "\a";              /// Sound
 
 #define StrM  cout << "* * * * ";
 #define Str   cout << "* ";
@@ -1312,8 +1312,7 @@ Menu:
                     if(i == 1)
                     {
                         Dice = (rand()/2/temp)%6;          ///jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
-                        Dice = rand()%6;
-                        Dice += 1;
+                        Dice ++;
                         if(You == 0 && Dice != 1) You -= Dice;     ///'1' sara guti ber hobe na
                         You += Dice;
 
@@ -1352,14 +1351,13 @@ Menu:
                     if(i == 2)
                     {
                         Dice = (rand()/3/temp)%6; ///jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
-                        Dice = rand()%6;
-                        Dice += 1;
+                        Dice ++;
                         if(Com == 0 && Dice != 1) Com -= Dice; ///'1' sara guti ber hobe na
                         Com += Dice;
 
                         ///snakes
                         if(Com == 97)Com = 12;
-                        if(Com == 63)Com = 3;
+                        if(Com == 63)Com =  3;
                         if(Com == 70)Com = 25;
                         if(Com == 32)Com = 13;
                         if(Com == 60)Com = 38;

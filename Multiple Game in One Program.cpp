@@ -620,7 +620,7 @@ Menu:
 
             new new new getch();
             TabM2 cout << "\tTo Play Again Press-'1'\n";
-            TabM2 cout << "\tTo Close Press-'Any Key'; \n";
+            TabM2 cout << "\tTo Goto Menu Press-'0'; \n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -917,7 +917,7 @@ Menu:
             }
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -1451,7 +1451,7 @@ Menu:
             x= 0;
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -1548,7 +1548,7 @@ Menu:
             x= 0;
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -1900,7 +1900,7 @@ Menu:
 
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -2245,7 +2245,7 @@ Menu:
 
                     new new new getch();
                     TabM cout << "To Play Again Press-'1'\n";
-                    TabM cout << "To goto Menu  Press-'0'\n";
+                    TabM cout << "To Goto Menu  Press-'0'\n";
                     string Again;
                     cin >> Again;
                     if(Again== "1") continue;
@@ -2373,7 +2373,7 @@ Menu:
 
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -2494,7 +2494,7 @@ Menu:
 
             new new new getch();
             TabM cout << "To Play Again Press-'1'\n";
-            TabM cout << "To goto Menu  Press-'0'\n";
+            TabM cout << "To Goto Menu  Press-'0'\n";
             string Again;
             cin >> Again;
             if(Again== "1") continue;
@@ -2519,3 +2519,5 @@ Menu:
     goto Menu;
 
 }
+
+

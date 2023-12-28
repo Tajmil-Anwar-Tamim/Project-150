@@ -1,15 +1,26 @@
+/*
+    In this Program, we can play Multiple Game (Tic Tac Toe, Snake Game, 
+    PacMan Lite, Snake-Ladder Ludo, Sudoku, Head-Tail Cricket) 
+    in different mode.
+    
+    For Increasing the facinity of the Program, we use some exclusive theme,
+    (such as getch() , ASCII (-128 to 31) etc. Thats all are not supported in
+    all OS & all Compiler. So I prefer to Run it in Windows OS Latest C++ Compiler.
+
+*/
+
 #include <bits/stdc++.h>
 #include <stdlib.h>
 #include <time.h>
-#include <conio.h>                        ///for getch();
+#include <conio.h>                        //for getch();
 
-#define TabM  cout << "\t\t\t\t\t\t";    ///Likhagulo Middle Show korar jonno
+#define TabM  cout << "\t\t\t\t\t\t";    //Likhagulo Middle Show korar jonno
 #define TabM2 cout << "\t\t\t\t     ";
 #define TabM3 cout << "\t\t\t\t\t  ";
 #define TabM4 cout << "\t\t\t\t ";
 
-#define new   cout << "\n";             ///New Line
-#define Sound cout << "\a";             /// Sound
+#define new   cout << "\n";             //New Line
+#define Sound cout << "\a";             // Sound
 
 #define StrM  cout << "* * * * ";
 #define Str   cout << "* ";
@@ -22,7 +33,7 @@
 
 using namespace std;
 
-int Randam_Func_09 (int a)                  ///Decited Computer's Chose Index in Tic Tac Toe Game
+int Randam_Func_09 (int a)                  //Decited Computer's Chose Index in Tic Tac Toe Game
 {
     srand(time(NULL));
     a = rand() % 9;
@@ -30,7 +41,7 @@ int Randam_Func_09 (int a)                  ///Decited Computer's Chose Index in
     return a;
 }
 
-int Randam_Function_100 (int Return_Fruit) ///Decited Fruit possition in Snake Game
+int Randam_Function_100 (int Return_Fruit) //Decited Fruit possition in Snake Game
 {
     srand(time(NULL));
     Return_Fruit = rand() % 100;
@@ -41,7 +52,7 @@ int Randam_Function_100 (int Return_Fruit) ///Decited Fruit possition in Snake G
 
 int main()
 {
-            char ch = 2; ///Smile Face
+            char ch = 2; //Smile Face
             TabM cout << ch << "   MULTIPLE GAME   " << ch;
 Menu:
             new new
@@ -57,9 +68,9 @@ Menu:
             TabM2 printf("Press 10,  to Play    SUDOKU  (Custom Given Value)\n\n");
             TabM2 printf("Press 11,  to Play         CRICKET (Bowling First)\n");
             TabM2 printf("Press 12,  to Play         CRICKET (Batting First)\n\n");
-            TabM2 printf("Press 0,   to CLOSE                   THE PROGRAM\n\n");                ///Introduction end
+            TabM2 printf("Press 0,   to CLOSE                   THE PROGRAM\n\n");                //Introduction end
 
-            new new ///New Line
+            new new //New Line
 
             TabM2 printf("SWITCH CASE NUMBER (0 to 12): \t");
 
@@ -72,19 +83,23 @@ Menu:
     switch (mark){
 
 
-    case 1:     ///Tic Tac Toe (Man vs Computer - 3 Different Mode)
+    case 1:     //Tic Tac Toe (Man vs Computer - 3 Different Mode)
+        
+/*
+        
+*/
 
         while(1)
         {
             int i, Me = 0, Computer = 0, Time = 0, Win_I = 0, Win_Com = 0, Call, Level;
-            char who, Index_Data[11]; ///'who' uses for who play first & Index_Data[10] contains Data which Index fill up or Not
-            char Index_Symbol[11];   ///Box-Symbol String (show 'x', 'o', ' ')
+            char who, Index_Data[11]; //'who' uses for who play first & Index_Data[10] contains Data which Index fill up or Not
+            char Index_Symbol[11];   //Box-Symbol String (show 'x', 'o', ' ')
 
             cout << "\t\t\t\t\t       TIC TAC TIC\n\n";
             cout << "\t\t\t  "; cout << "[Everytime Press '1' to '9' For Push Your Symbol in the Box] " << endl << endl;
 
 
-                ///Show the Index Numbers (below)
+                //Show the Index Numbers (below)
                 TabM Str StrM new
                 TabM Str cout << "1 2 3 "; Str new
                 TabM Str cout << "4 5 6 "; Str new
@@ -96,35 +111,35 @@ Menu:
                     Index_Data[i] = 0;
                 }
 
-    ///           new cout << "\t\t\t  "; cout << "[Everytime Press '1' to '9' For Push Your Symbol in the Box] " << endl << endl;
+    //           new cout << "\t\t\t  "; cout << "[Everytime Press '1' to '9' For Push Your Symbol in the Box] " << endl << endl;
 
-                Print_Loop_ttt_vsc:///Print_Update
+                Print_Loop_ttt_vsc://Print_Update
 
                 Index_Data[Me] = 1;
                 Index_Data[Computer] = 2;
 
                 for(i = 0; i <= 9; i ++ )
                 {
-                    if(Index_Data[i] == 0) Index_Symbol[i] = ' ';     ///Unfilled
-                    if(Index_Data[i] == 1) Index_Symbol[i] = 'x';     ///Filled by You
-                    if(Index_Data[i] == 2) Index_Symbol[i] = 'o';     ///Filled by Computer
+                    if(Index_Data[i] == 0) Index_Symbol[i] = ' ';     //Unfilled
+                    if(Index_Data[i] == 1) Index_Symbol[i] = 'x';     //Filled by You
+                    if(Index_Data[i] == 2) Index_Symbol[i] = 'o';     //Filled by Computer
 
                 }
 
                 new
                 Sound
-                TabM Str StrM new                       ///Index Border Degign
+                TabM Str StrM new                       //Index Border Degign
                 TabM Str
 
                 for(i = 1; i <= 9; i ++ )
                 {
-                   cout << Index_Symbol[i] << " ";          ///Show Update
-                   if(i%3 == 0) {Str new TabM Str }     ///jehutu colomn 3 ta tai 3 index por por new line
+                   cout << Index_Symbol[i] << " ";          //Show Update
+                   if(i%3 == 0) {Str new TabM Str }     //jehutu colomn 3 ta tai 3 index por por new line
                 }
 
                 StrM new new
 
-                if(Time == 0)                         ///only first time show these (below)
+                if(Time == 0)                         //only first time show these (below)
                     {
                         new TabM cout << "Choise Level";
                         new TabM3 cout << "Easy / Medium / Hard";
@@ -132,13 +147,13 @@ Menu:
                         cin >> Level;
                         new new
 
-                        if      (Level <= 0) break; ///if you want to close the game
+                        if      (Level <= 0) break; //if you want to close the game
                         else if (Level == 1) {TabM cout << "EASY LEVEL\n"; }
                         else if (Level == 2) {TabM cout << "MEDIUM LEVEL\n"; }
                         else               {TabM cout << "HARD LEVEL\n"; }
                         new
 
-                        ///who play first(You/Computer/Toss)
+                        //who play first(You/Computer/Toss)
 
                         TabM3 cout << "    Who Play First?\n";
                         TabM3 cout << "  ('You'/'Computer')\n";
@@ -149,7 +164,7 @@ Menu:
 
                         cin >> who;
                         who = tolower(who);
-                        if(who != 'i' && who != 'c')            ///Tossing
+                        if(who != 'i' && who != 'c')            //Tossing
                         {
                             srand(time(NULL));
                             if(rand() %2 == who %2 ) {new TabM3 cout << "  You won the Toss\n" ; who = 'i'; }
@@ -176,17 +191,17 @@ Menu:
                         StrM new new
                     }
 
-                if(Time == 0 && who == 'c') goto Com;             ///Computer er First chal hole
+                if(Time == 0 && who == 'c') goto Com;             //Computer er First chal hole
                 if(Time == 0) ;
-                else if(Time%2 == 1 && who == 'c' || Time%2 == 0 && who != 'c') goto Come_Back_2;     ///Jor o bijor tomo chaler hiseb (Computer age chal dile bijor tomo chal gulo Computer er ar ami age chal dile jor tomo chal gulo Computer er)
-                else goto Come_Back_1;                                                              /// " " "
+                else if(Time%2 == 1 && who == 'c' || Time%2 == 0 && who != 'c') goto Come_Back_2;     //Jor o bijor tomo chaler hiseb (Computer age chal dile bijor tomo chal gulo Computer er ar ami age chal dile jor tomo chal gulo Computer er)
+                else goto Come_Back_1;                                                              // " " "
 
 
 
             while(1)
             {
                 You:
-                    Time ++ ;                ///kotota ghor fill up holo- seta count kora hocche
+                    Time ++ ;                //kotota ghor fill up holo- seta count kora hocche
 
                     ReCall_Me:
 
@@ -194,29 +209,29 @@ Menu:
                         cin >> Me;
     //                    Me = Me % 10;
                         if(Me<0 || Me >= 10)
-                        {new TabM cout << "Wrong Input"; goto Menu; }              /// jodi wrong chal dewa hoy, then- game close hobe
+                        {new TabM cout << "Wrong Input"; goto Menu; }              // jodi wrong chal dewa hoy, then- game close hobe
 
 
-                        if(Index_Data[Me]  !=  0)                       ///jodi ghor-tite already chal dewa hoye thake
-                        {cout << "Already Exist\n\n"; goto ReCall_Me; }   ///tobe accept hobe na, punoray chal dewa lagbe
+                        if(Index_Data[Me]  !=  0)                       //jodi ghor-tite already chal dewa hoye thake
+                        {cout << "Already Exist\n\n"; goto ReCall_Me; }   //tobe accept hobe na, punoray chal dewa lagbe
 
-                    Index_Data[Me] = 1;               ///Index-tate Amar chal input holo
+                    Index_Data[Me] = 1;               //Index-tate Amar chal input holo
 
-                    goto Print_Loop_ttt_vsc;        ///for printing update result
+                    goto Print_Loop_ttt_vsc;        //for printing update result
 
-                    Come_Back_1:         ///print kore punoray fire ase
+                    Come_Back_1:         //print kore punoray fire ase
 
                         if(Index_Data[1] == 1 && Index_Data[2] == 1 && Index_Data[3] == 1 || Index_Data[4] == 1 && Index_Data[5] == 1 && Index_Data[6] == 1 || Index_Data[7] == 1 && Index_Data[8] == 1 && Index_Data[9] == 1 || Index_Data[1] == 1 && Index_Data[4] == 1 && Index_Data[7] == 1 || Index_Data[2] == 1 && Index_Data[5] == 1 && Index_Data[8] == 1 || Index_Data[3] == 1 && Index_Data[6] == 1 && Index_Data[9] == 1 ||  Index_Data[3] == 1 && Index_Data[5] == 1 && Index_Data[7] == 1 || Index_Data[1] == 1 && Index_Data[5] == 1 && Index_Data[9] == 1 )
                         {
                             Win_I ++ ;
-                            break;              ///Ami jitle game finished hobe
+                            break;              //Ami jitle game finished hobe
                         }
-                    if(Time == 9) break;        ///sob (9ta) ghor puron holegame finished
+                    if(Time == 9) break;        //sob (9ta) ghor puron holegame finished
 
                 Com:
-                    Time ++ ;                     ///kotobar chal dewa holo/ kotota Index puron holo, seta count kora hocche
+                    Time ++ ;                     //kotobar chal dewa holo/ kotota Index puron holo, seta count kora hocche
 
-                    if(Level == 1)                ///Easy mode : Computer sob chal randamly dibe
+                    if(Level == 1)                //Easy mode : Computer sob chal randamly dibe
                     {
                         while(1)
                             {
@@ -225,9 +240,9 @@ Menu:
                             }
                     }
 
-                    else if(Level == 2)       ///Medium Level : kichuta buddhimotta apply korbe computer, bad computer a bishesh koushole fade fele harano somvob
+                    else if(Level == 2)       //Medium Level : kichuta buddhimotta apply korbe computer, bad computer a bishesh koushole fade fele harano somvob
                     {
-                        ///Attack of Computer (Computer er nije jitar Formula gulo)
+                        //Attack of Computer (Computer er nije jitar Formula gulo)
                         if     (Index_Data[1] == 2 && Index_Data[2] == 2 && Index_Data[3] == 0)  { Index_Data[3] = 2; Computer  = 3; }
                         else if(Index_Data[1] == 2 && Index_Data[3] == 2 && Index_Data[2] == 0)  { Index_Data[2] = 2; Computer  = 2; }
                         else if(Index_Data[2] == 2 && Index_Data[3] == 2 && Index_Data[1] == 0)  { Index_Data[1] = 2; Computer  = 1; }
@@ -253,7 +268,7 @@ Menu:
                         else if(Index_Data[3] == 2 && Index_Data[7] == 2 && Index_Data[5] == 0)  { Index_Data[5] = 2; Computer  = 5; }
                         else if(Index_Data[5] == 2 && Index_Data[7] == 2 && Index_Data[3] == 0)  { Index_Data[3] = 2; Computer  = 3; }
 
-                        ///Depends of Computer(computer er amar jita atkanor formula gulo)
+                        //Depends of Computer(computer er amar jita atkanor formula gulo)
                         else if(Index_Data[1] == 1 && Index_Data[2] == 1 && Index_Data[3] == 0)  { Index_Data[3] = 2; Computer  = 3; }
                         else if(Index_Data[1] == 1 && Index_Data[3] == 1 && Index_Data[2] == 0)  { Index_Data[2] = 2; Computer  = 2; }
                         else if(Index_Data[2] == 1 && Index_Data[3] == 1 && Index_Data[1] == 0)  { Index_Data[1] = 2; Computer  = 1; }
@@ -279,10 +294,10 @@ Menu:
                         else if(Index_Data[3] == 1 && Index_Data[7] == 1 && Index_Data[5] == 0)  { Index_Data[5] = 2; Computer  = 5; }
                         else if(Index_Data[5] == 1 && Index_Data[7] == 1 && Index_Data[3] == 0)  { Index_Data[3] = 2; Computer  = 3; }
 
-                        else if(Time == 9)                ///seshe je ghor faka thakbe setate chalbe (time complexity komanor jonno just, not so necessary)
+                        else if(Time == 9)                //seshe je ghor faka thakbe setate chalbe (time complexity komanor jonno just, not so necessary)
                             {   for(i = 1; i <= 9; i ++ )   {if(Index_Data[i] == 0) Computer = i; }  }
 
-                        else                            /// kono shortoi na mille randamly chal dibe computer
+                        else                            // kono shortoi na mille randamly chal dibe computer
                         {
                             while(1)
                             {
@@ -293,9 +308,9 @@ Menu:
 
                     }
 
-                    else            ///Hard Level (Harano osomvob - hoy com. jitbe nahoy draw) - Medium er sathe aro kichu shorto add kora hoyeche jate com. ke fade feleo harano na jay)
+                    else            //Hard Level (Harano osomvob - hoy com. jitbe nahoy draw) - Medium er sathe aro kichu shorto add kora hoyeche jate com. ke fade feleo harano na jay)
                     {
-                        ///Attacks
+                        //Attacks
                         if     (Index_Data [1] == 2 && Index_Data [2] == 2 && Index_Data [3] == 0)  { Index_Data [3] = 2; Computer  = 3; }
                         else if(Index_Data [1] == 2 && Index_Data [3] == 2 && Index_Data [2] == 0)  { Index_Data [2] = 2; Computer  = 2; }
                         else if(Index_Data [2] == 2 && Index_Data [3] == 2 && Index_Data [1] == 0)  { Index_Data [1] = 2; Computer  = 1; }
@@ -320,7 +335,7 @@ Menu:
                         else if(Index_Data [3] == 2 && Index_Data [5] == 2 && Index_Data [7] == 0)  { Index_Data [7] = 2; Computer  = 7; }
                         else if(Index_Data [3] == 2 && Index_Data [7] == 2 && Index_Data [5] == 0)  { Index_Data [5] = 2; Computer  = 5; }
                         else if(Index_Data [5] == 2 && Index_Data [7] == 2 && Index_Data [3] == 0)  { Index_Data [3] = 2; Computer  = 3; }
-                        ///Depends
+                        //Depends
                         else if(Index_Data [1] == 1 && Index_Data [2] == 1 && Index_Data [3] == 0)  { Index_Data [3] = 2; Computer  = 3; }
                         else if(Index_Data [1] == 1 && Index_Data [3] == 1 && Index_Data [2] == 0)  { Index_Data [2] = 2; Computer  = 2; }
                         else if(Index_Data [2] == 1 && Index_Data [3] == 1 && Index_Data [1] == 0)  { Index_Data [1] = 2; Computer  = 1; }
@@ -346,7 +361,7 @@ Menu:
                         else if(Index_Data [3] == 1 && Index_Data [7] == 1 && Index_Data [5] == 0)  { Index_Data [5] = 2; Computer  = 5; }
                         else if(Index_Data [5] == 1 && Index_Data [7] == 1 && Index_Data [3] == 0)  { Index_Data [3] = 2; Computer  = 3; }
 
-                        ///Some Extra-intelegence of Computer (below) <-- jate kono vabe fade felano na jay
+                        //Some Extra-intelegence of Computer (below) <-- jate kono vabe fade felano na jay
                         else if (Time == 1)
                         {
                            srand(time(NULL));
@@ -394,7 +409,7 @@ Menu:
                         }
 
 
-                        else                /// uporer kono shorto-i na mille Randam number Call korbe
+                        else                // uporer kono shorto-i na mille Randam number Call korbe
                         {
                             while(1)
                             {
@@ -406,21 +421,21 @@ Menu:
                     }
 
 
-                    Index_Data[Computer] = 2; ///Input of Computer (computer er chal dewa)
+                    Index_Data[Computer] = 2; //Input of Computer (computer er chal dewa)
 
-                    new new TabM3 cout <<  "Computer Chose :\t" << Computer << endl << endl;  ///Output Computer choise
+                    new new TabM3 cout <<  "Computer Chose :\t" << Computer << endl << endl;  //Output Computer choise
 
-                    goto Print_Loop_ttt_vsc;    ///Print Update Result
-                    Come_Back_2:                 ///Come Back after printing
+                    goto Print_Loop_ttt_vsc;    //Print Update Result
+                    Come_Back_2:                 //Come Back after printing
 
                     if(Index_Data[1] == 2 && Index_Data[2] == 2 && Index_Data[3] == 2 || Index_Data[4] == 2 && Index_Data[5] == 2 && Index_Data[6] == 2 || Index_Data[7] == 2 && Index_Data[8] == 2 && Index_Data[9] == 2 || Index_Data[1] == 2 && Index_Data[4] == 2 && Index_Data[7] == 2 || Index_Data[2] == 2 && Index_Data[5] == 2 && Index_Data[8] == 2 || Index_Data[3] == 2 && Index_Data[6] == 2 && Index_Data[9] == 2 ||  Index_Data[3] == 2 && Index_Data[5] == 2 && Index_Data[7] == 2 || Index_Data[1] == 2 && Index_Data[5] == 2 && Index_Data[9] == 2 )
                     {
                         Win_Com ++ ;
-                        break;           ///Computer jitle-o game finished
+                        break;           //Computer jitle-o game finished
                     }
 
 
-                    if(Time == 9) break; ///sob ghor puron hole-o game finished
+                    if(Time == 9) break; //sob ghor puron hole-o game finished
 
 
             }
@@ -437,8 +452,8 @@ Menu:
             TabM2 cout << "\tTo Goto  Menu Press-'0'; \n";
             string Again;
             cin >> Again;
-            if(Again == "1") continue;      ///punoray game Menu hobe
-            else break;                   ///program close hobe
+            if(Again == "1") continue;      //punoray game Menu hobe
+            else break;                   //program close hobe
         }
         break;
 
@@ -446,10 +461,10 @@ Menu:
 
 
 
-    case 2:     ///Tic Tac Toe (Man vs Man)
+    case 2:     //Tic Tac Toe (Man vs Man)
 
-        /// Tic Tac Toe (Man vs Man) Game ti onekta Tic Tac Toe (Man vs Computer) er motoi
-        /// Sudhu Parthokko holo Ekhane 2 jon Player khelbe (Computer khelbe na)
+        // Tic Tac Toe (Man vs Man) Game ti onekta Tic Tac Toe (Man vs Computer) er motoi
+        // Sudhu Parthokko holo Ekhane 2 jon Player khelbe (Computer khelbe na)
 
         while(1)
         {
@@ -466,7 +481,7 @@ Menu:
             TabM Str cout << "7 8 9 "; Str new
             TabM Str StrM new new
 
-            ///ke age chalbe Player '1' na '2' naki Toss
+            //ke age chalbe Player '1' na '2' naki Toss
             cout << "\t\t\tWho Play First?(Player-1 / Player-2)  {Press '1' or '2'} : ";
 
             char Who;
@@ -486,7 +501,7 @@ Menu:
                 Index_Data[i] = 0;
             }
 
-            Print_Loop_ttt_vs_man:   ///Print_Loop
+            Print_Loop_ttt_vs_man:   //Print_Loop
 
             Index_Data[Player_1] = 1;
             Index_Data[Player_2] = 2;
@@ -558,7 +573,7 @@ Menu:
                 Player2:
                     Time ++ ;
 
-                    Recall_Player2:///
+                    Recall_Player2://
                         cout << "Player-2 :   ";
                         cin >> Player_2;
 
@@ -588,7 +603,6 @@ Menu:
 
                     if(Time == 9) break;
 
-
             }
 
             Sound
@@ -600,12 +614,12 @@ Menu:
             else                cout << "\t\tMatch Drawn\n";
 
             new new new getch();
-                TabM2 cout << "\tTo Play Again Press-'1'\n";
-                TabM2 cout << "\tTo Close Press-'Any Key'; \n";
-                string Again;
-                cin >> Again;
-                if(Again == "1") continue;
-                else goto Menu;
+            TabM2 cout << "\tTo Play Again Press-'1'\n";
+            TabM2 cout << "\tTo Close Press-'Any Key'; \n";
+            string Again;
+            cin >> Again;
+            if(Again == "1") continue;
+            else goto Menu;
         }
 
         break;
@@ -615,15 +629,21 @@ Menu:
 
 
 
-    case 3:     ///SNAKE-CLASSIC
-
+    case 3:     //SNAKE-CLASSIC
+        
+/*          
+        Here our target is eat more fruit to Increase Score. The Snake's Size
+        is increasing according to eat fruit.
+        If Snake Bites its Body then the Game is Over. If Score=100, then the Game will be
+        Complete.         
+*/
         while(1)
         {
             int Fruit, Score = 0, temp, Finish = 0, Call, Change, i, x = 0;
-            int Snake_Head = 46;        ///snake head initial possition
-            int Snake_Body[110] = {0};  ///0, 1-100, Primary body Size(5)+Extra some for avoid silly risk
+            int Snake_Head = 46;        //snake head initial possition
+            int Snake_Body[110] = {0};  //0, 1-100, Primary body Size(5)+Extra some for avoid silly risk
             char Move;
-            char PlayGround[111];       ///0, 1-100, NULL+Primary body Size(5)+Extra some for avoid silly risk
+            char PlayGround[111];       //0, 1-100, NULL+Primary body Size(5)+Extra some for avoid silly risk
 
             cout << "\t\t\t\t\t\tSNAKE GAME [Classic](10x10)\n\n";
             cout << "\t\t\t\t[Everytime You should press '1' to '9' for moving; \n\t\t\t\t 8'(up) or '2'(Down) or '4'(Left) or '6'(Right) or\n\t\t\t\t\t  '1'/'3'/'7'/'9' (Cross moving)\n\t\t\t\t\t (According to Keyboard Numarical Keys) ]\n";
@@ -634,24 +654,24 @@ Menu:
 
             Fruit = Randam_Function_100(Call);
 
-            ///First Initialization of Snake Body <--(below)
+            //First Initialization of Snake Body <--(below)
             Snake_Body[1] = Snake_Head-1;
             Snake_Body[2] = Snake_Head-2;
             Snake_Body[3] = Snake_Head-3;
 
             while(1)
             {
-                cycle:                  ///jate fruit snake er body borabor na ase
+                cycle:                  //jate fruit snake er body borabor na ase
                     Change ++ ;
                     for(i = 3+Score; i>0; i--)
                     {
                         if(Fruit == Snake_Body[i]) {x = -1;  break; }
                     }
-                    if((x == -1 || Fruit == Snake_Head) && Change <= 100 ) ///Chnge variable ta newar karon holo jodi snake body r size full arear soman hoy orthat fruit dewar moto kono jayga na thake tahole snake body borabor kono ek jaygay fruit porbe , eta na use korle oi muhurte program continiously choltei thakto, susthu vabe game complete hoto na
+                    if((x == -1 || Fruit == Snake_Head) && Change <= 100 ) //Chnge variable ta newar karon holo jodi snake body r size full arear soman hoy orthat fruit dewar moto kono jayga na thake tahole snake body borabor kono ek jaygay fruit porbe , eta na use korle oi muhurte program continiously choltei thakto, susthu vabe game complete hoto na
                     {
                         x = 0;
                         Fruit ++ ;
-                        Fruit = 1+Fruit%100;  ///jate 100 overtek na kore
+                        Fruit = 1+Fruit%100;  //jate 100 overtek na kore
                         goto cycle;
                     }
 
@@ -660,83 +680,83 @@ Menu:
                     PlayGround [i] = ' ';
                 }
 
-                PlayGround [Fruit] = temp%2+42; ///Fruit Symbol (*, +)
-                PlayGround [Snake_Head] = 2;    ///Snake Head Symbol (Ascii 2)
+                PlayGround [Fruit] = temp%2+42; //Fruit Symbol (*, +)
+                PlayGround [Snake_Head] = 2;    //Snake Head Symbol (Ascii 2)
 
                 for(i = Score+3; i>0; i--)
                 {
-                    PlayGround [Snake_Body[i]] = 254; ///Snake Body Symbol
+                    PlayGround [Snake_Body[i]] = 254; //Snake Body Symbol
                 }
-                PlayGround [Snake_Body[Score+3]] = 4; ///Snake Tail Symbol
+                PlayGround [Snake_Body[Score+3]] = 4; //Snake Tail Symbol
 
                 new;
-                TabM;  Brdr;  BrdrM;  new;  ///Border
+                TabM;  Brdr;  BrdrM;  new;  //Border
                 TabM;  Brdr;
 
                 for(i = 1; i <= 100; i ++ )
                 {
-                   cout << PlayGround [i] << " ";           /// show Update resulte of Game-PlayGround
-                   if(i%10 == 0) {Brdr  new  TabM  Brdr}  ///proti 10 ghor por por new line asbe (jehutu Column 10 ta)
+                   cout << PlayGround [i] << " ";           // show Update resulte of Game-PlayGround
+                   if(i%10 == 0) {Brdr  new  TabM  Brdr}  //proti 10 ghor por por new line asbe (jehutu Column 10 ta)
                 }
 
                 BrdrM new new
 
-                TabM show       ///Show Score
+                TabM show       //Show Score
 
-                if(Finish == -1) break; ///snake nijeke bite korle game over
+                if(Finish == -1) break; //snake nijeke bite korle game over
 
         //        cout << "Press '8'(Up) or '2'(Down) or '4'(Left) or '6'(Right) or '1/3/7/9' (Cross moving) :\t";
                 cin >> Move;
                 temp ++ ; Change = 0;
 
-                if(Move == '5' || Move == '0') continue; ///no change
+                if(Move == '5' || Move == '0') continue; //no change
 
                 for(i = 3+Score; i>0; i--)
                 {
-                    Snake_Body[i] =  Snake_Body[i-1];  ///Snake er body possition update
+                    Snake_Body[i] =  Snake_Body[i-1];  //Snake er body possition update
                 }
                 Snake_Body[1] =  Snake_Head;
 
-                ///to move to up / down / left / right / cross (below) - (According to Key-board Numarical Pads)
+                //to move to up / down / left / right / cross (below) - (According to Key-board Numarical Pads)
                 if(Move == '6') {Snake_Head ++ ;     /** to move Right */  if(Snake_Head%10 == 1) Snake_Head -= 10; /**Dan dike ber hoye gele oi borabor Bam dik diye asbe */ }
                 if(Move == '4') {Snake_Head--;     /** to move Down  */  if(Snake_Head%10 == 0) Snake_Head += 10; /**Bam dike ber hoye gele oi borabor Dan dik diye asbe */}
                 if(Move == '2') {Snake_Head += 10; /** to move Down  */   }
                 if(Move == '8') {Snake_Head -= 10; /** to move Up    */   }
 
-                ///optional(cross moving)
-                if(Move == '3') {Snake_Head += 11; /**Right-Down*/   if(Snake_Head%10 == 1) Snake_Head -= 10; } ///box er ekdik diye snake ber hoye gele, oi borabor biporit dik theke snake fire asbe.
-                if(Move == '7') {Snake_Head -= 11; /**Left-Up   */  if(Snake_Head%10 == 0)  Snake_Head += 10; } /// " "
-                if(Move == '9') {Snake_Head -=  9; /**Right-Up  */  if(Snake_Head%10 == 1)  Snake_Head -= 10; } /// " "
-                if(Move == '1') {Snake_Head +=  9; /**Left-Down */  if(Snake_Head%10 == 0)  Snake_Head += 10; } /// " "
+                //optional(cross moving)
+                if(Move == '3') {Snake_Head += 11; /**Right-Down*/   if(Snake_Head%10 == 1) Snake_Head -= 10; } //box er ekdik diye snake ber hoye gele, oi borabor biporit dik theke snake fire asbe.
+                if(Move == '7') {Snake_Head -= 11; /**Left-Up   */  if(Snake_Head%10 == 0)  Snake_Head += 10; } // " "
+                if(Move == '9') {Snake_Head -=  9; /**Right-Up  */  if(Snake_Head%10 == 1)  Snake_Head -= 10; } // " "
+                if(Move == '1') {Snake_Head +=  9; /**Left-Down */  if(Snake_Head%10 == 0)  Snake_Head += 10; } // " "
 
-                if(Snake_Head > 100) Snake_Head -= 100; ///box er ekdik diye snake ber hoye gele, oi borabor biporit dik theke snake fire asbe.
-                if(Snake_Head <=  0) Snake_Head += 100; /// " " "
+                if(Snake_Head > 100) Snake_Head -= 100; //box er ekdik diye snake ber hoye gele, oi borabor biporit dik theke snake fire asbe.
+                if(Snake_Head <=  0) Snake_Head += 100; // " " "
 
                 for(i = 3+Score; i>0; i--)
                 {
-                    if(Snake_Head == Snake_Body[i]) { Finish = -1; continue; } ///jodi Snake nijeke Bite kore, then game over
+                    if(Snake_Head == Snake_Body[i]) { Finish = -1; continue; } //jodi Snake nijeke Bite kore, then game over
                 }
 
-                if(Snake_Head == Fruit)         ///Snake Fruit eat korar sathe sathe -
+                if(Snake_Head == Fruit)         //Snake Fruit eat korar sathe sathe -
                 {
-                    Score ++ ;                    ///-Score barbe
-                    if(Score == 97) Score += 3; ///Highest point 100 korar jonno;   ///ekhane 4 holo snake er initial body size (not so necessary)
-                    Sound                       ///-Sound hobe
-                    Fruit =  Randam_Function_100(Call);     /// -fruit er possition change hobe
+                    Score ++ ;                    //-Score barbe
+                    if(Score == 97) Score += 3; //Highest point 100 korar jonno;   //ekhane 4 holo snake er initial body size (not so necessary)
+                    Sound                       //-Sound hobe
+                    Fruit =  Randam_Function_100(Call);     // -fruit er possition change hobe
 
                 }
 
             }
 
 
-            Move = 1; ///Smile Sign
+            Move = 1; //Smile Sign
 
             Sound;
             cout << "\n\t\t\t\t\t\t\tGame Over!" << Move << "\n\t\t\t\t\t\t\tScore : " << Score << endl;  new
 
-            if(Score >= 100)         ///if snake size is equal to playground size
+            if(Score >= 100)         //if snake size is equal to playground size
             {
-                Move = 2;                           ///Smile Sign
+                Move = 2;                           //Smile Sign
                 TabM cout <<  "\tCongratulation!\n";
                 TabM cout << "\tHighest Score!" << Move;
                 new new
@@ -750,8 +770,8 @@ Menu:
             TabM cout << "To Goto  Menu, Press- '0' \n";
             TabM cin >> Again;
             new new new
-            if(Again == "1") continue; ///to play Again this game
-            else break;              ///go to  Menu
+            if(Again == "1") continue; //to play Again this game
+            else break;              //go to  Menu
         }
         break;
 
@@ -759,11 +779,11 @@ Menu:
 
 
 
-    case 4:     ///SNAKE-BOX
+    case 4:     //SNAKE-BOX
 
-        ///Ei Game ti-r orthat Snake (Box)-er sathe purboborti Snake (Classic) er Besh mill royeche.
-        ///Sudhu Parthokko ei jaygay je Snake er Body er pashapashi Border e touch lagleo Game over hobr.
-        ///Tai Comment khub ekta beshi add korsi na, karon beshir vag comment-e purboborti Snake Classic a add kora hoyeche
+        //Ei Game ti-r orthat Snake (Box)-er sathe purboborti Snake (Classic) er Besh mill royeche.
+        //Sudhu Parthokko ei jaygay je Snake er Body er pashapashi Border e touch lagleo Game over hobe.
+        //Tai Comment khub ekta beshi add korsi na, karon beshir vag comment-e purboborti Snake Classic a add kora hoyeche
 
         while(1)
         {
@@ -774,7 +794,7 @@ Menu:
             char Area[111];
 
             cout << "\t\t\t\t\t\tSNAKE GAME [Box](10x10)\n\n";
-            ///cout << "\t\t\t\t\t [Here You can move only '1' to '100']\n";
+            //cout << "\t\t\t\t\t [Here You can move only '1' to '100']\n";
             cout << "\t\t\t\t[Everytime You should press '1' to '9' for moving; \n\t\t\t\t 8'(up) or '2'(Down) or '4'(Left) or '6'(Right) or\n\t\t\t\t\t  '1'/'3'/'7'/'9' (Cross moving)\n\t\t\t\t\t (According to Keyboard Numarical Keys) ]\n";
             cout << "\n\t\t\t\t [If Snake Bites it's Body or Border, then The Game is Over.]";
 
@@ -783,7 +803,7 @@ Menu:
 
             Fruit = Randam_Function_100(Call);
 
-            ///Primary Declaration of Snake Body
+            //Primary Declaration of Snake Body
             Snake_Body[1] = Snake_Head-1;
             Snake_Body[2] = Snake_Head-2;
             Snake_Body[3] = Snake_Head-3;
@@ -791,7 +811,7 @@ Menu:
             while(1)
             {
 
-                cyclebox:///jate fruit snake er body borabor na ase
+                cyclebox://jate fruit snake er body borabor na ase
                     Change ++ ;
                     for(i = 3+Score; i>0; i--)
                     {
@@ -810,14 +830,14 @@ Menu:
                     Area[i] = ' ';
                 }
 
-                Area[Fruit] = temp%2+42; ///Fruit Symbol(*, +)
-                Area[Snake_Head] = 2;    ///Snake Head Symbol
+                Area[Fruit] = temp%2+42; //Fruit Symbol(*, +)
+                Area[Snake_Head] = 2;    //Snake Head Symbol
 
                 for(i = Score+3; i>0; i--)
                 {
-                    Area[Snake_Body[i]] = 254;  ///Snake Body Symbol
+                    Area[Snake_Body[i]] = 254;  //Snake Body Symbol
                 }
-                Area[Snake_Body[Score+3]] = 4;  ///Snake Tail Symbol
+                Area[Snake_Body[Score+3]] = 4;  //Snake Tail Symbol
 
                 new;
                 TabM;  Brdr;  BrdrM;  new;
@@ -838,46 +858,46 @@ Menu:
                 cin >> Move;
                 temp ++ ; Change = 0;
 
-                if(Move == '5' || Move == '0') continue; ///No change
+                if(Move == '5' || Move == '0') continue; //No change
 
                 for(i = 3+Score; i>0; i--)
                 {
-                    Snake_Body[i] =  Snake_Body[i-1];  ///Snake Body Possition Update
+                    Snake_Body[i] =  Snake_Body[i-1];  //Snake Body Possition Update
                 }
                 Snake_Body[1] =  Snake_Head;
 
-                ///Move to up/down/left/right/cross Moving (below)
-                if(Move == '6') {Snake_Head ++ ;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}      ///Box e touch lagle Game over
-                if(Move == '4') {Snake_Head--;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}      /// " " "
+                //Move to up/down/left/right/cross Moving (below)
+                if(Move == '6') {Snake_Head ++ ;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}      //Box e touch lagle Game over
+                if(Move == '4') {Snake_Head--;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}      // " " "
                 if(Move == '8') {Snake_Head -= 10;    }
                 if(Move == '2') {Snake_Head += 10;    }
-                ///otional
-                if(Move == '3') {Snake_Head += 11;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}  /// " " "
-                if(Move == '7') {Snake_Head -= 11;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}  /// " " "
-                if(Move == '9') {Snake_Head -=  9;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}  /// " " "
-                if(Move == '1') {Snake_Head +=  9;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}  /// " " "
+                //otional
+                if(Move == '3') {Snake_Head += 11;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}  // " " "
+                if(Move == '7') {Snake_Head -= 11;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}  // " " "
+                if(Move == '9') {Snake_Head -=  9;      if(Snake_Head%10 == 1)  { Snake_Head = 0; continue; }}  // " " "
+                if(Move == '1') {Snake_Head +=  9;      if(Snake_Head%10 == 0)  { Snake_Head = 0; continue; }}  // " " "
 
-                if(Snake_Head > 100) continue;  ///Box e touch lagle Game over
-                if(Snake_Head <=  0) continue;  /// " " "
+                if(Snake_Head > 100) continue;  //Box e touch lagle Game over
+                if(Snake_Head <=  0) continue;  // " " "
 
                 for(i = 3 + Score; i > 0; i--)
                 {
                     if(Snake_Head == Snake_Body[i]) { Snake_Head = -100;  continue; }
                 }
 
-                if(Snake_Head == Fruit)     ///Fruit Eat korle
+                if(Snake_Head == Fruit)     //Fruit Eat korle
                 {
-                    Score ++ ;                ///Score Barbe
-                    if(Score == 97) Score += 3; ///Highest point 100 korar jonno just; not so necessary
+                    Score ++ ;                //Score Barbe
+                    if(Score == 97) Score += 3; //Highest point 100 korar jonno just; not so necessary
                     Sound
-                    Fruit =  Randam_Function_100(Call); /// Fruit possition change
+                    Fruit =  Randam_Function_100(Call); // Fruit possition change
 
                 }
 
             }
 
 
-            Move = 1; ///Smile Sign
+            Move = 1; //Smile Sign
 
             Sound
             if(Snake_Head == -100) cout << "\n\n\t\t\t\t\t\t       TOUCH BODY!";
@@ -886,7 +906,7 @@ Menu:
 
             if(Score == 100)
             {
-                Move = 2; ///Smile Sign
+                Move = 2; //Smile Sign
                 TabM cout <<  "\tCongratulation!\n";
                 TabM cout << "\tHighest Score!" << Move;
                 new new
@@ -905,14 +925,24 @@ Menu:
 
 
 
-    case 5: ///PacMan Lite (Normal mode)
+    case 5: //PacMan Lite (Normal mode)
+        
+/*
+        Here Pacman's Target is Eat All Fruit in the Box and Save Himself
+        from Ghost. Ghost is Always try to catch Pacman. If Ghost Catch
+        Pacman then Pacman's Life will Decreased. Pacman has 3 Life. If 
+        Pacman lost his all life then Game is over. If PacMan Eat all fruit
+        in the Box then Level will be Completed.
+        We Play the Game in 3 Different Mode according to Number of Ghost. 
+
+*/
 
             while(1)
             {
                 int Score = 0, Temp = 0, i, j, x = 0, Number_of_Enemy, Life = 3, Level;
                 int PacMan;
                 char Move;
-                char PlayGround[201], Fruit[201];                    /// Playground Size 10*10 = 100 (0-99) + ghost gulor dhakka khawar por randm possition ja (100 - 199) er moddhe thakbe
+                char PlayGround[201], Fruit[201];                    // Playground Size 10*10 = 100 (0-99) + ghost gulor dhakka khawar por randm possition ja (100 - 199) er moddhe thakbe
 
                 cout << "\t\t\t\t\t\tPACMAN GAME (10x10) - Easy Mode\n\n";
                 cout << "\t\t\t\t\tEverytime You should press '1' to '9' for moving; \n\t\t\t\t 8'(up) or '2'(Down) or '4'(Left) or '6'(Right) or '5'(No Change) \n\t\t\t\t\t or '1'/'3'/'7'/'9' (Cross moving)\n\t\t\t\t\t(According to Keyboard Numarical Keys)\n";
@@ -923,46 +953,46 @@ Menu:
 
                 new new new;
 
-                new TabM  cout  << "Choise Level";                      ///choise Level according to Number of ghost
+                new TabM  cout  << "Choise Level";                      //choise Level according to Number of ghost
                 new TabM3 cout << "Easy / Medium / Hard";
                 new TabM2 cout << "   Press - '1' / '2' / '3' : ";
                 cin >> Level;
                 new new
 
-                if      (Level <= 0)  break;                           ///If You want to close the Program
+                if      (Level <= 0)  break;                           //If You want to close the Program
                 else if (Level == 1) {TabM cout << "EASY LEVEL\n"; }
                 else if (Level == 2) {TabM cout << "MEDIUM LEVEL\n"; }
                 else                 {TabM cout << "HARD LEVEL\n"; }
                 new
 
-                for(i = 0; i < 100; i ++ )                            ///Initially sob gulo ghorei dot dekhabe
+                for(i = 0; i < 100; i ++ )                            //Initially sob gulo ghorei dot dekhabe
                 {
-                    Fruit[i] = 1;                                     ///'1' indicate korse oi possition a fruit ache
+                    Fruit[i] = 1;                                     //'1' indicate korse oi possition a fruit ache
                 }
 
-                Pac_Reform:                                          ///if Pacman Lost his a Life then Program Menu from here
+                Pac_Reform:                                          //if Pacman Lost his a Life then Program Menu from here
 
                 if(Level == 1)
                 {
-                    Number_of_Enemy = 2;                          ///Easy Level a 2 ti ghost thakbe
+                    Number_of_Enemy = 2;                          //Easy Level a 2 ti ghost thakbe
                     int Enemy[Number_of_Enemy];
                     Enemy[0] = 0;
-                    Enemy[1] = 99;                              ///Ghost gulor initial possiton
+                    Enemy[1] = 99;                              //Ghost gulor initial possiton
                 }
 
                 else if(Level == 2)
                 {
-                    Number_of_Enemy = 4;                          ///Medium Level a 4 ti ghost thakbe
+                    Number_of_Enemy = 4;                          //Medium Level a 4 ti ghost thakbe
                     int Enemy[Number_of_Enemy];
                     Enemy[0] = 0;
                     Enemy[1] = 99;
                     Enemy[2] = 9;
-                    Enemy[3] = 90;                              ///Ghost gulor initial possiton
+                    Enemy[3] = 90;                              //Ghost gulor initial possiton
                 }
 
                 else
                 {
-                    Number_of_Enemy = 8;                          ///Hard Level a 8 ti ghost thakbe
+                    Number_of_Enemy = 8;                          //Hard Level a 8 ti ghost thakbe
                     int Enemy[Number_of_Enemy];
                     Enemy[0] = 0;
                     Enemy[1] = 99;
@@ -971,15 +1001,15 @@ Menu:
                     Enemy[4] = 5;
                     Enemy[5] = 95;
                     Enemy[6] = 40;
-                    Enemy[7] = 49;                              ///Ghost gulor initial possiton
+                    Enemy[7] = 49;                              //Ghost gulor initial possiton
                 }
 
                 int Enemy[Number_of_Enemy];
-                PacMan = 45;                                    ///Pacman er initial possition
+                PacMan = 45;                                    //Pacman er initial possition
                 Temp = 0;
 
 
-                while(1)                                        ///Protibar Move korar por Program ekhane chole asbe
+                while(1)                                        //Protibar Move korar por Program ekhane chole asbe
                 {
 
                     for(i = 0; i < 100; i ++ )
@@ -989,24 +1019,24 @@ Menu:
 
                     for(i = 0; i < 100; i ++ )
                     {
-                        if(Fruit[i] == 1) PlayGround[i] = '.';          ///jodi Fruit thake tobe Dot Sign dekhabe
+                        if(Fruit[i] == 1) PlayGround[i] = '.';          //jodi Fruit thake tobe Dot Sign dekhabe
                     }
 
-                    PlayGround[PacMan] = 1;                         ///PacMan Symbol (Smile face Black)
+                    PlayGround[PacMan] = 1;                         //PacMan Symbol (Smile face Black)
 
                     for(i = 0; i<Number_of_Enemy; i ++ )
                     {
-                        PlayGround[Enemy[i]] = 2;                   ///Enemy Symbol (Smile face White)
+                        PlayGround[Enemy[i]] = 2;                   //Enemy Symbol (Smile face White)
                     }
 
                     new;
-                    TabM;  Brdr;  BrdrM;  new;                      ///Border
+                    TabM;  Brdr;  BrdrM;  new;                      //Border
                     TabM;  Brdr;
 
                     for(i = 0; i < 100; i ++ )
                     {
-                       cout << PlayGround[i] << " ";                    ///Print PlayGround
-                       if(i%10 == 9) {Brdr;  new;  TabM;  Brdr;  }  ///proti 10 ghor por por new line asbe (jehutu Column 10 ta)
+                       cout << PlayGround[i] << " ";                    //Print PlayGround
+                       if(i%10 == 9) {Brdr;  new;  TabM;  Brdr;  }  //proti 10 ghor por por new line asbe (jehutu Column 10 ta)
                     }
 
                     BrdrM new new
@@ -1015,36 +1045,36 @@ Menu:
                         {
                             if(Enemy[i] >= 100 && Enemy[i] <= 109)
                             {
-                                TabM cout << "\tWarning\n\n";     ///jodi kono ghost box er kachakachi chole ase tokhon warning dibe
+                                TabM cout << "\tWarning\n\n";     //jodi kono ghost box er kachakachi chole ase tokhon warning dibe
                             }
                         }
 
-                    TabM showScore                  ///Show Current Score
-                    TabM showLife                   ///Show Pacman remaining Life
+                    TabM showScore                  //Show Current Score
+                    TabM showLife                   //Show Pacman remaining Life
 
 
-                    if(Life == 0)       break;              ///Remaining Life '0' hole Game Over
-                    if(Score == 100)    break;              ///Sob fruit gulo khele Game Over & Highest Score hobe
-                    if(Temp == -1)      goto Pac_Reform;     ///jodi pacman er life kome jay, tobe sobar possition reform hobe
+                    if(Life == 0)       break;              //Remaining Life '0' hole Game Over
+                    if(Score == 100)    break;              //Sob fruit gulo khele Game Over & Highest Score hobe
+                    if(Temp == -1)      goto Pac_Reform;     //jodi pacman er life kome jay, tobe sobar possition reform hobe
 
 
                     for(i = 0; i<Number_of_Enemy; i ++ )
                     {
-                        if      (Enemy[i] /10 - PacMan/10 > 0) Enemy[i]  -= 10; ///Jodi Ghost er RowNumber Amar RowNumber theke BESHI hoy, tobe tar RowNumber Kombe & Amar Nikote asbe
-                        else if (Enemy[i] /10 - PacMan/10 < 0) Enemy[i]  += 10; ///Jodi Ghost er RowNumber Amar RowNumber theke KOM   hoy, tobe tar RowNumber Barbe & Amar Nikote asbe
-                                                                              ///R Same RowNumber hole No Change
+                        if      (Enemy[i] /10 - PacMan/10 > 0) Enemy[i]  -= 10; //Jodi Ghost er RowNumber Amar RowNumber theke BESHI hoy, tobe tar RowNumber Kombe & Amar Nikote asbe
+                        else if (Enemy[i] /10 - PacMan/10 < 0) Enemy[i]  += 10; //Jodi Ghost er RowNumber Amar RowNumber theke KOM   hoy, tobe tar RowNumber Barbe & Amar Nikote asbe
+                                                                              //R Same RowNumber hole No Change
 
-                        if      (Enemy[i] %10 - PacMan%10 > 0) Enemy[i] --;   ///Jodi Ghost er Column Number Amar Column Number theke BESHI hoy, tobe tar Column Number Kombe & Amar Nikote asbe
-                        else if (Enemy[i] %10 - PacMan%10 < 0) Enemy[i]  ++ ;   ///Jodi Ghost er Column Number Amar Column Number theke  KOM  hoy, tobe tar Column Number Barbe & Amar Nikote asbe
-                                                                              ///R Same Column Number hole No Change
+                        if      (Enemy[i] %10 - PacMan%10 > 0) Enemy[i] --;   //Jodi Ghost er Column Number Amar Column Number theke BESHI hoy, tobe tar Column Number Kombe & Amar Nikote asbe
+                        else if (Enemy[i] %10 - PacMan%10 < 0) Enemy[i]  ++ ;   //Jodi Ghost er Column Number Amar Column Number theke  KOM  hoy, tobe tar Column Number Barbe & Amar Nikote asbe
+                                                                              //R Same Column Number hole No Change
                     }
 
                     cin >> Move;
 
-                    if(Move == 'x' || Move == 'X') {Life = 0; break; } ///if You want to Close the Game press 'x'/'X';
+                    if(Move == 'x' || Move == 'X') {Life = 0; break; } //if You want to Close the Game press 'x'/'X';
 
                     if(Move == '6') {PacMan ++ ;        /** to move Right*/     if(PacMan%10 == 0)      PacMan --; /** Dont cross right border Right*/  }
-                    if(Move == '4') {PacMan--;        /** to move Left */     if((PacMan+20)%10 == 9) PacMan  ++ ; /** Dont cross right border Right*/  } ///'-' Value Avoiding er jonno +20 dichi
+                    if(Move == '4') {PacMan--;        /** to move Left */     if((PacMan+20)%10 == 9) PacMan  ++ ; /** Dont cross right border Right*/  } //'-' Value Avoiding er jonno +20 dichi
                     if(Move == '2') {PacMan += 10; }  /**to move Down  */
                     if(Move == '8') {PacMan -= 10; }  /**to move Up    */
 
@@ -1053,24 +1083,24 @@ Menu:
                     if(Move == '9') {PacMan -= 9;  /** to move Right-Up  */     if((PacMan+20)%10 == 0)    PacMan --; }
                     if(Move == '1') {PacMan += 9;  /** to move Left-Down */     if(PacMan%10      == 9)    PacMan  ++ ; }
 
-                    if(PacMan >= 100) PacMan -= 10; ///Don't cross Down-Border
-                    if(PacMan <  0) PacMan += 10;   ///Don't cross Upper-Border
+                    if(PacMan >= 100) PacMan -= 10; //Don't cross Down-Border
+                    if(PacMan <  0) PacMan += 10;   //Don't cross Upper-Border
 
                     for(i = 0; i<100; i ++ )
                     {
-                        if(PacMan == i && Fruit[i] == 1)/// jodi Pacman er position-a fruit thake -
+                        if(PacMan == i && Fruit[i] == 1)// jodi Pacman er position-a fruit thake -
                         {
-                            Score ++ ;                    /// - tobe Score 1 barbe
-                            Fruit[i] = 0;                 /// & Fruit ta delete hoye jabe
+                            Score ++ ;                    // - tobe Score 1 barbe
+                            Fruit[i] = 0;                 // & Fruit ta delete hoye jabe
                         }
                     }
 
                     for(i = 0; i<Number_of_Enemy; i ++ )
                     {
-                        if(PacMan == Enemy[i] )     /// jodi Ghost Pacman er body touch kore-
+                        if(PacMan == Enemy[i] )     // jodi Ghost Pacman er body touch kore-
                         {
                             Temp = -1;
-                            Life --;                /// -tobe Life kome jabe
+                            Life --;                // -tobe Life kome jabe
                             Sound
                             break;
                         }
@@ -1082,10 +1112,10 @@ Menu:
                         for(j = i+1; j<Number_of_Enemy; j ++ )
                         {
 
-                            if(Enemy[i] == Enemy[j] && Temp  !=  -1  )  ///Jodi Ghost gulor moddhe dhakka lage
+                            if(Enemy[i] == Enemy[j] && Temp  !=  -1  )  //Jodi Ghost gulor moddhe dhakka lage
                             {
-                                Enemy[i] = 109 + 10*Number_of_Enemy-i;   ///tobe tara dure chole jabe & punaray nich theke ground a chole asar chestha korbe
-                                Enemy[j] = 110 + 10*Number_of_Enemy+j;   /// "  "
+                                Enemy[i] = 109 + 10*Number_of_Enemy-i;   //tobe tara dure chole jabe & punaray nich theke ground a chole asar chestha korbe
+                                Enemy[j] = 110 + 10*Number_of_Enemy+j;   // "  "
 
                                 Sound
                             }
@@ -1096,7 +1126,7 @@ Menu:
 
                 if(Life == 0)
                 {
-                    Move = 2; ///Ghost Sign (white-Smile)
+                    Move = 2; //Ghost Sign (white-Smile)
                     Sound;
                     cout << "\n\t\t\t\t\t\t\tGame Over!" << Move << "\n\t\t\t\t\t\t\tScore : " << Score << endl;  new
                 }
@@ -1104,9 +1134,9 @@ Menu:
                 if(Score == 100)
                 {
                     Sound
-                    Move = 1;       /// Pacman sign (black-Smile)
+                    Move = 1;       // Pacman sign (black-Smile)
                     TabM cout <<  "\tCongratulation!\n";
-                    TabM cout << "\tHighest Score!" << Move; ///100 is highest score , because there are 100 fruit in the ground
+                    TabM cout << "\tHighest Score!" << Move; //100 is highest score , because there are 100 fruit in the ground
                     new new
                 }
 
@@ -1125,12 +1155,12 @@ Menu:
 
 
 
-    case 6:  ///PacMan Lite (Expert mode)
+    case 6:  //PacMan Lite (Expert mode)
 
-        ///PacMan Lite (Expert mode) tir sathe purboborti PacMan Lite (Normal mode)-er Besh mill royeche.
-        ///Sudhu Parthokko ei jaygay je, ekhane ghost gulo amar pore move korbe (jar fole amar next move onujayi ora podokkhep nibe)
-        ///jar fole game ti besh jotil hoye giyeche , ei jotilota dur korar jonno PacMan er border ved korar onumoti diyechi & Gost er songkha 2 er moddhei simaboddho rekhechi.
-        ///Tai Comment khub ekta beshi add korsi na, karon beshir vag comment-e purboborti Snake Classic a add kora hoyeche
+        //PacMan Lite (Expert mode) tir sathe purboborti PacMan Lite (Normal mode)-er Besh mill royeche.
+        //Sudhu Parthokko ei jaygay je, ekhane ghost gulo amar pore move korbe (jar fole amar next move onujayi ora podokkhep nibe)
+        //jar fole game ti besh jotil hoye giyeche , ei jotilota dur korar jonno PacMan er border ved korar onumoti diyechi & Gost er songkha 2 er moddhei simaboddho rekhechi.
+        //Tai Comment khub ekta beshi add korsi na, karon beshir vag comment-e purboborti Snake Classic a add kora hoyeche
 
 
 
@@ -1178,20 +1208,20 @@ Menu:
                     if(Fruit[i] == 1) PlayGround[i] = '.';
                 }
 
-                PlayGround[PacMan] = 1; ///PacMan Symbol
+                PlayGround[PacMan] = 1; //PacMan Symbol
 
                 for(i = 0; i<Number_of_Enemy; i ++ )
                 {
-                    PlayGround[Enemy[i]] = 2; ///Enemy Symbol
+                    PlayGround[Enemy[i]] = 2; //Enemy Symbol
                 }
 
                 new;
-                TabM;  Brdr;  BrdrM;  new; ///Border
+                TabM;  Brdr;  BrdrM;  new; //Border
                 TabM;  Brdr;
 
                 for(i = 0; i < 100; i ++ )
                 {
-                   cout << PlayGround[i] << " "; ///Print PlayGround
+                   cout << PlayGround[i] << " "; //Print PlayGround
                    if(i%10 == 9) {Brdr;  new;  TabM;  Brdr;  }
                 }
 
@@ -1201,11 +1231,11 @@ Menu:
                 {
                     if(Enemy[i] >= 100 && Enemy[i] <= 109)
                     {
-                        TabM cout << "\tWarning\n\n";     ///jodi kono ghost box er kachakachi chole ase tokhon warning dibe
+                        TabM cout << "\tWarning\n\n";     //jodi kono ghost box er kachakachi chole ase tokhon warning dibe
                     }
                 }
 
-                TabM showScore///Show Score
+                TabM showScore//Show Score
                 TabM showLife
 
 
@@ -1215,9 +1245,9 @@ Menu:
 
                 cin >> Move;
 
-                if(Move == 'x' || Move == 'X') {Life = 0; break; } ///if You want to Close the Game press 'x'/'X';
+                if(Move == 'x' || Move == 'X') {Life = 0; break; } //if You want to Close the Game press 'x'/'X';
 
-                ///Pacman Moving(below)
+                //Pacman Moving(below)
                 if(Move == '6') {PacMan ++ ;      if(PacMan%10 == 0)PacMan  -= 10; }
                 if(Move == '4') {PacMan--;      if((PacMan+20)%10 == 9) PacMan  += 10; }
                 if(Move == '2') {PacMan += 10;    }
@@ -1231,7 +1261,7 @@ Menu:
                 if(PacMan >= 100) PacMan -= 100 ;
                 if(PacMan <  0) PacMan += 100;
 
-                ///Enemy(Ghost) Moving according to my possition (below) - Ghostgulo sobsomoy amar kache chole asar chestha korbe
+                //Enemy(Ghost) Moving according to my possition (below) - Ghostgulo sobsomoy amar kache chole asar chestha korbe
                 for(i = 0; i<Number_of_Enemy; i ++ )
                 {
                     if(Enemy[i] /10-PacMan/10 > 0) Enemy[i]  -= 10;
@@ -1278,7 +1308,7 @@ Menu:
 
             if(Life == 0)
             {
-                Move = 2; ///Smile Sign
+                Move = 2; //Smile Sign
                 Sound;
                 cout << "\n\t\t\t\t\t\t\tGame Over!" << Move << "\n\t\t\t\t\t\t\tScore : " << Score << endl;  new
             }
@@ -1286,7 +1316,7 @@ Menu:
             if(Score == 100)
             {
                 Sound
-                Move = 1; ///Smile Sign
+                Move = 1; //Smile Sign
                 TabM cout <<  "\tCongratulation!\n";
                 TabM cout << "\tHighest Score!" << Move;
                 new new
@@ -1308,7 +1338,14 @@ Menu:
 
 
 
-    case 7: ///Ludo Snake-Ladder (vs Computer)
+    case 7: //Ludo Snake-Ladder (vs Computer)
+        
+/*
+      Here There are 2 Player (I & Computer). Both Target is to reach 100.
+      Who Reach to 100 Firstest, he is Winner.
+      Every Time We Hit Dice. & The Dice Give us Value from 1 to 6.
+      Ladder Help us to Increase our Possition & Snake Decrease our Possition. 
+*/
 
     new TabM cout << " LUDO SNAKE-LADDER GAME"; new new
         while(1)
@@ -1325,19 +1362,19 @@ Menu:
 
                 for(i = 1; i <= 2; i ++ )
                 {
-                    ///getch();
+                    //getch();
                     temp += 67;
                     temp = temp%100;
                     srand(time(NULL));
 
                     if(i == 1)
                     {
-                        Dice = (rand()/2/temp)%6;         ///jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
+                        Dice = (rand()/2/temp)%6;         //jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
                         Dice  ++ ;
-                        if(You == 0 && Dice != 1) You -= Dice;    ///'1' sara guti ber hobe na
+                        if(You == 0 && Dice != 1) You -= Dice;    //'1' sara guti ber hobe na
                         You += Dice;
 
-                        ///snakes
+                        //snakes
                         if(You == 97)You = 12;
                         if(You == 63)You =  3;
                         if(You == 70)You = 25;
@@ -1348,7 +1385,7 @@ Menu:
                         if(You == 82)You = 43;
 
 
-                        ///ladders
+                        //ladders
                         if(You == 8)  You = 41;
                         if(You == 50) You = 93;
                         if(You == 6)  You = 16;
@@ -1371,12 +1408,12 @@ Menu:
 
                     if(i == 2)
                     {
-                        Dice = (rand()/3/temp)%6; ///jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
+                        Dice = (rand()/3/temp)%6; //jodi randam number 2 khetrei same ache tai vinno songkha dara vag dichi
                         Dice  ++ ;
-                        if(Com == 0 && Dice != 1) Com -= Dice; ///'1' sara guti ber hobe na
+                        if(Com == 0 && Dice != 1) Com -= Dice; //'1' sara guti ber hobe na
                         Com += Dice;
 
-                        ///snakes
+                        //snakes
                         if(Com == 97)Com = 12;
                         if(Com == 63)Com =  3;
                         if(Com == 70)Com = 25;
@@ -1387,7 +1424,7 @@ Menu:
                         if(Com == 82)Com = 43;
 
 
-                        ///laders
+                        //laders
                         if(Com ==  8)  Com = 41;
                         if(Com == 50) Com = 93;
                         if(Com ==  6)  Com = 16;
@@ -1427,14 +1464,19 @@ Menu:
 
 
 
-    case 8: ///Ludo Snake-Ladder (Multiplayer)
-
+    case 8: //Ludo Snake-Ladder (Multiplayer)
+/*
+      Here There are multiple Players can Play. Everyone's Target is to reach 100.
+      Who Reach to 100 Firstest, He is Winner.
+      Every Time We Hit Dice. & The Dice Give us Value from 1 to 6.
+      Ladder Help us to Increase our Possition & Snake Decrease our Possition. 
+*/
         while(1)
         {
             Sound
             new TabM
             cout << " LUDU SNAKE-LADDER GAME\n\n";
-            ///cout << "#Disclaimer: \t\tLudo is Haram Game for Muslim. So you should avoid to play this.\n\n";
+            //cout << "#Disclaimer: \t\tLudo is Haram Game for Muslim. So you should avoid to play this.\n\n";
 
                 int Number_of_Player;
                 TabM cout << "Number of Player :\t";
@@ -1449,22 +1491,22 @@ Menu:
 
                 while(1)
                 {
-                    ///getch();
-                    Temp += Number_of_Player*(Temp+1)+1; ///not so necessary, you can also change 'c' differently
-                    Temp = Temp%99; ///Minimized size, not so necessary, you can also change 'c' differently
+                    //getch();
+                    Temp += Number_of_Player*(Temp+1)+1; //not so necessary, you can also change 'c' differently
+                    Temp = Temp%99; //Minimized size, not so necessary, you can also change 'c' differently
 
                     for(i = 1; i <= Number_of_Player; i ++ )
                     {
-                        Temp += 5; ///not so necessary, you can also change 'c' differently
+                        Temp += 5; //not so necessary, you can also change 'c' differently
                         getch();
                         srand(time(NULL));
 
-                            Dice = (rand()/(i+1)*i+rand()+Temp*Temp/i)%6; ///just for different value of d in same time also, you can also change it differently but '%6' is must nedded
-                            Dice += 1; ///(0-5)-->(1-6)
-                            if(Board[i] == 0 && Dice != 1) Board[i] -= Dice; ///'1' chara guti ber hobe na
-                            Board[i] += Dice; ///position update
+                            Dice = (rand()/(i+1)*i+rand()+Temp*Temp/i)%6; //just for different value of d in same time also, you can also change it differently but '%6' is must nedded
+                            Dice += 1; //(0-5)-->(1-6)
+                            if(Board[i] == 0 && Dice != 1) Board[i] -= Dice; //'1' chara guti ber hobe na
+                            Board[i] += Dice; //position update
 
-                            ///snakes
+                            //snakes
                             if(Board[i] == 97)Board[i] = 12;
                             if(Board[i] == 63)Board[i] = 3;
                             if(Board[i] == 70)Board[i] = 25;
@@ -1475,7 +1517,7 @@ Menu:
                             if(Board[i] == 82)Board[i] = 43;
 
 
-                            ///ladders
+                            //ladders
                             if(Board[i] == 8)Board[i] = 41;
                             if(Board[i] == 50)Board[i] = 93;
                             if(Board[i] == 6)Board[i] = 16;
@@ -1484,9 +1526,9 @@ Menu:
                             if(Board[i] == 26)Board[i] = 29;
 
 
-                           if(Board[i]>100) Board[i] -= Dice; ///Don't cross 100
-                           cout << "Player-" << i << " : " << Board[i] << "(+" << Dice << ")" << "\t"; ///Print
-                           if(Board[i] == 100)///Winner
+                           if(Board[i]>100) Board[i] -= Dice; //Don't cross 100
+                           cout << "Player-" << i << " : " << Board[i] << "(+" << Dice << ")" << "\t"; //Print
+                           if(Board[i] == 100)//Winner
                                 {
                                     Sound
                                     new new new
@@ -1517,15 +1559,20 @@ Menu:
 
 
 
-    case 9: ///Sudoku (Fixed Value)
+    case 9: //Sudoku (Fixed Value)
+        
+/*
+        Here We should Fill up All of the Blank Space properly (according to
+        Sudoku Rules.)
+*/
         while(1)
         {
             TabM cout << "\tSUDOKU GAME\n\n\n";
-            int Sudoku[101] = {0}, cnt, row, col, Index, Value, i, j, k;  ///Sudoku holo Main Array jeti sokol index Value contain korbe, etake 2D array hisebeo newa jaito but ami neini
-            char Temp[101];   /// ei string-tar kaj holo, jate given index gulor value ami poriborton korte na pari.
+            int Sudoku[101] = {0}, cnt, row, col, Index, Value, i, j, k;  //Sudoku holo Main Array jeti sokol index Value contain korbe, etake 2D array hisebeo newa jaito but ami neini
+            char Temp[101];   // ei string-tar kaj holo, jate given index gulor value ami poriborton korte na pari.
 
 
-            ///Given Index Value (below) <-- Eigulo ami amar iccha onujayi sohoj vabe diyechi, onno jekono proper value input dewa jabe
+            //Given Index Value (below) <-- Eigulo ami amar iccha onujayi sohoj vabe diyechi, onno jekono proper value input dewa jabe
             srand(time(NULL));
             int Randam = rand() %9 +1;
 
@@ -1588,9 +1635,9 @@ Menu:
                 if(Sudoku[i]>9) Sudoku[i]=Sudoku[i]-9;
             }
 
-            TabM                                ///Likha gulo jate majhe dekha jay
+            TabM                                //Likha gulo jate majhe dekha jay
 
-            ///Initial print(below Loop)
+            //Initial print(below Loop)
             for(i = 11; i<100; i ++ )
             {
                 if  (Sudoku[i] == 0)  printf("%c  ", Sudoku[i]+'.');
@@ -1603,7 +1650,7 @@ Menu:
             }
             Sound
 
-            ///(below-Loop)--> kongulo index initially faka chilo r kongulo faka chilo na seta jachai
+            //(below-Loop)--> kongulo index initially faka chilo r kongulo faka chilo na seta jachai
             for(i = 0; i <= 100; i ++ )
             {
                 if(Sudoku[i] == 0 ) Temp[i] = 0 ;
@@ -1616,17 +1663,17 @@ Menu:
 
             while(1)
             {
-                char flag = 1;                                       ///Shorto Puron Korte perechi kina seta jachai
+                char flag = 1;                                       //Shorto Puron Korte perechi kina seta jachai
 
-                cout << "Enter Row & Column Number  : ";
+                cout << "Enter Row & Column Number [Separately or Combinedly]  : ";
                 cin>>row;
 
-                if(row>9) {col= row %10;    row= row /10; }         /// keu jodi chay row column er majhe kono space na diye direct likhte pare se jonno
+                if(row>9) {col= row %10;    row= row /10; }         // keu jodi chay row column er majhe kono space na diye direct likhte pare se jonno
                 else         cin>>col;
 
-                if(row<0 || col<0 ) goto Menu;                      ///if I want to close the program
+                if(row<0 || col<0 ) goto Menu;                      //if I want to close the program
                 if(col >9) col = 0;
-                if(row >9) row = 0;                                 ///ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate Big Value dileo Program thik moro Run hoy
+                if(row >9) row = 0;                                 //ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate Big Value dileo Program thik moro Run hoy
 
                 Index=10*row+col;
 
@@ -1635,19 +1682,19 @@ Menu:
 //              row=Index/10; col=Index%10;
 //              if(Index<0 || Index >99) goto Menu;
 
-                if(Temp[Index] != 0) {cout << "Not Changeable\n\n"; continue; }  ///Given Value gulo Change kora jabe na
+                if(Temp[Index] != 0) {cout << "Not Changeable\n\n"; continue; }  //Given Value gulo Change kora jabe na
 
-                cout << "Index[" << row << "][" << col << "]\t\t   = ";
-                cin >> Value;  ///Index Value Input
+                cout << "Index[" << row << "][" << col << "]\t   = ";
+                cin >> Value;  //Index Value Input
 
                 new
 
                 if(Value<0) Value = -Value;
-                if(Value>9) Value = Value%10; ///ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate jekono value dile thikmoto Input hoy
+                if(Value>9) Value = Value%10; //ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate jekono value dile thikmoto Input hoy
 
-                Sudoku[Index] = Value; ///Initilized
+                Sudoku[Index] = Value; //Initilized
 
-                ///Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
+                //Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
                 for(k = 1; k <= 9; k ++ )
                 {
                     for(j = 11; j <= 91; j += 10)
@@ -1662,7 +1709,7 @@ Menu:
                     if(flag == 0) break;
                 }
 
-                ///Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
+                //Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
                 for(k = 1; k <= 9; k ++ )
                 {
                     if(flag == 0) break;
@@ -1674,15 +1721,15 @@ Menu:
                         {
                             if(Sudoku[i] == k) cnt ++ ;
                         }
-                        if(cnt  !=  1) {flag = 0; break; } ///Sobgulo Number Kebol-Matro 1 bar ache kina; na thakle shorto puron hoyni
+                        if(cnt  !=  1) {flag = 0; break; } //Sobgulo Number Kebol-Matro 1 bar ache kina; na thakle shorto puron hoyni
                     }
                     if(flag == 0) break;
                 }
 
 
-                ///(3*3)-Size er Box gulote Shorto puron hoyeche kina seta jachai (below 9 Macro loop)
+                //(3*3)-Size er Box gulote Shorto puron hoyeche kina seta jachai (below 9 Macro loop)
 
-                for(k = 1; k <= 9; k ++ )           ///3*3(1) cheak
+                for(k = 1; k <= 9; k ++ )           //3*3(1) cheak
                 {
                     if(flag == 0) break;
                         cnt = 0;
@@ -1697,7 +1744,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                for(k = 1; k <= 9; k ++ )           ///3*3(2) cheak
+                for(k = 1; k <= 9; k ++ )           //3*3(2) cheak
                 {
                     if(flag == 0) break;
                         cnt = 0;
@@ -1713,7 +1760,7 @@ Menu:
 
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(3) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(3) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1728,7 +1775,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(4) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(4) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1744,7 +1791,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(5) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(5) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1760,7 +1807,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(6) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(6) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1775,7 +1822,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(7) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(7) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1791,7 +1838,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(8) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(8) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1807,7 +1854,7 @@ Menu:
                     if(cnt != 1) {flag = 0; break; }
                 }
 
-                 for(k = 1; k <= 9; k ++ )           ///3*3(9) cheak
+                 for(k = 1; k <= 9; k ++ )           //3*3(9) cheak
                 {
                     if(flag == 0) break;
                                     cnt = 0;
@@ -1826,11 +1873,11 @@ Menu:
 
                 new TabM
 
-                ///Print the Sudoku Matrix(Below)
+                //Print the Sudoku Matrix(Below)
                 for(i = 11; i<100; i ++ )
                 {
-//////                    cout << Sudoku[i] << "  ";
-                    if      (Sudoku[i] == 0)           printf("%c  ", Sudoku[i]+'.'); ///'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
+////                    cout << Sudoku[i] << "  ";
+                    if      (Sudoku[i] == 0)           printf("%c  ", Sudoku[i]+'.'); //'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
                     else if (Temp  [i]==0)             printf("%c` ", Sudoku[i]+'0');
                     else                               printf("%c  ", Sudoku[i]+'0');
                     if((i%10)% 3 == 0) cout << " ";
@@ -1842,12 +1889,12 @@ Menu:
                 cout << "\n\n\n";
                 Sound
 
-                if(flag == 1){TabM cout << "   Congratulation\n"; break; } ///jodi Shobgulo Shorto thik moto fill up hoy, tobe Ami thik moto Game sompurno korte perechi
+                if(flag == 1){TabM cout << "   Congratulation\n"; break; } //jodi Shobgulo Shorto thik moto fill up hoy, tobe Ami thik moto Game sompurno korte perechi
 
             }
 
             getch(); TabM cout << "   Congratulation\n";
-            getch(); TabM cout << "   Congratulation\n"; /// 3 time Congratulation (not so necessary)
+            getch(); TabM cout << "   Congratulation\n"; // 3 time Congratulation (not so necessary)
 
 
             new new new getch();
@@ -1861,7 +1908,7 @@ Menu:
 
         }
 
-    case 10:  ///Sudoku (Custom Value)
+    case 10:  //Sudoku (Custom Given Value)
 
         while(1)
         {
@@ -1869,13 +1916,13 @@ Menu:
             int Sudoku[101] = {0}, cnt, row, col, Index, Value, i, j, k;
             char temp_index,Temp[101];
 
-            ///First print(All Blank) --> Below
+            //First print(All Blank) --> Below
 
-            TabM   ///Lekha gulo jate middle e dekha jay
+            TabM   //Lekha gulo jate middle e dekha jay
 
             for(i = 11; i<100; i ++ )
             {
-                if   (Sudoku[i] == 0) printf("%c  ", Sudoku[i]+'.');  ///'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
+                if   (Sudoku[i] == 0) printf("%c  ", Sudoku[i]+'.');  //'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
                 else                  printf("%c  ", Sudoku[i]+'0');
 
                 if((i%10)% 3 == 0)               cout << " ";
@@ -1884,9 +1931,9 @@ Menu:
 
             }
 
-            cout << "\n\nNow, Initialize the Given Values of Index. Empty Indexs should be Initialized with '0'. Ifyou Mistake to Inserting Data, Press '-'. After Initialization The Game will be Start.\n\n";
+            cout << "\n\nNow, Initialize the Given Values of Index. Empty Indexs should be Initialized with '0'. Ifyou Mistake to Inserting Data, Press '-' or 'o'. After Initialization The Game will be Start.\n\n";
 
-            ///Ei program ti-te Copiler er moddhei Given Data Gulo Input Dewa Jabe Nicher Loop tir sahajje
+            //Ei program ti-te Copiler er moddhei Given Data Gulo Input Dewa Jabe Nicher Loop tir sahajje
 
             for(i = 1; i<10; i ++ )
             {
@@ -1895,18 +1942,24 @@ Menu:
                     cout << "Index[" << i << "][" << j << "] = ";
                     cin >> temp_index;
 
-                    if(temp_index == '.' &&  Sudoku[10*i+j] >= 0 && Sudoku[10*i+j] <= 9) continue;  ///jodi Re-edit a Value Change korte na chai
+                    if(temp_index == '.' &&  Sudoku[10*i+j] >= 0 && Sudoku[10*i+j] <= 9) continue;  //jodi Re-edit a Value Change korte na chai
 
                     Sudoku[10*i+j]=temp_index-'0';
 
                     if(Sudoku[10*i+j] >= 0 && Sudoku[10*i+j] <= 9) ;
 
-                    else if(temp_index == '-')           ///jodi kono fault thik korte chai
+                    else if(temp_index == 'o')           //jodi kono fault thik korte chai
                     {
                         i=1; j=0;
                     }
 
-                    else                                ///jodi Main Menu te Fire jete chai
+                    else if(temp_index == '-')           //jodi kono fault thik korte chai
+                    {
+                        j-=2;
+                        if(j<=0) {j+=9; i--;}
+                    }
+
+                    else                                //jodi Main Menu te Fire jete chai
                     {
                         goto Menu;
                     }
@@ -1914,17 +1967,17 @@ Menu:
                 }
             }
 
-            /// Complete Given Data's Initialization
+            // Complete Given Data's Initialization
 
             new new new
 
-            ///Now The Game will Menu (below)
+            //Now The Game will Start (below)
 
             TabM    cout << "  Now The Game Starts\n\n";
 
             TabM
 
-            for(i = 11; i<100; i ++ )         ///Initial print
+            for(i = 11; i<100; i ++ )         //Initial print
             {
                 if      (Sudoku[i] == 0)    printf("%c  ", Sudoku[i]+'.');
                 else                        printf("%c  ", Sudoku[i]+'0');
@@ -1935,7 +1988,7 @@ Menu:
 
             }
 
-             ///(below-Loop)--> kongulo index initially faka chilo r kongulo faka chilo na seta jachai
+             //(below-Loop)--> kongulo index initially faka chilo r kongulo faka chilo na seta jachai
             for(i = 0; i <= 100; i ++ )
             {
                 if(Sudoku[i] == 0 ) Temp[i] = 0 ;
@@ -1948,39 +2001,39 @@ Menu:
 
             while(1)
             {
-                char flag = 1;                                      ///Shorto Puron Korte perechi kina seta jachai
+                char flag = 1;                                      //Shorto Puron Korte perechi kina seta jachai
 
-                cout << "Enter Row & Column Number  : ";
+                cout << "Enter Row & Column Number [Separately or Combinedly]  : ";
                 cin>>row;
 
-                if(row>9) {col= row %10;    row= row /10; }         /// keu jodi chay row column er majhe kono space na diye direct likhte pare se jonno
+                if(row>9) {col= row %10;    row= row /10; }         // keu jodi chay row column er majhe kono space na diye direct likhte pare se jonno
                 else         cin>>col;
 
-                if(row<0 || col<0 ) goto Menu;                      ///if I want to close the program
+                if(row<0 || col<0 ) goto Menu;                      //if I want to close the program
                 if(col >9) col = 0;
-                if(row >9) row = 0;                                 ///ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate Big Value dileo Program thik moro Run hoy
+                if(row >9) row = 0;                                 //ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate Big Value dileo Program thik moro Run hoy
 
                 Index=10*row+col;
 
-//////                cout << "Enter Index Number \t: ";
-//////                cin >> Index;
-//////                row = Index/10; col = Index%10;
-//////                if(Index<0 || Index >99) Index = 0;
+////                cout << "Enter Index Number \t: ";
+////                cin >> Index;
+////                row = Index/10; col = Index%10;
+////                if(Index<0 || Index >99) Index = 0;
 
 
-                if(Temp[Index] != 0) {cout << "Not Changeable\n\n"; continue; }  ///Given Value gulo Change kora jabe na
+                if(Temp[Index] != 0) {cout << "Not Changeable\n\n"; continue; }  //Given Value gulo Change kora jabe na
 
-                cout << "Index[" << row << "][" << col << "]\t\t   = ";
-                cin >> Value;  ///Index Value Input
+                cout << "Index[" << row << "][" << col << "]\t   = ";
+                cin >> Value;  //Index Value Input
 
                 new
 
                 if(Value<0) Value = -Value;
-                if(Value>9) Value = Value%10;       ///ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate jekono value dile thikmoto Input hoy
+                if(Value>9) Value = Value%10;       //ei 2 line dewa khub important chilo na, tao diyechi ejonno je jate jekono value dile thikmoto Input hoy
 
-                Sudoku[Index] = Value;              ///Initilized
+                Sudoku[Index] = Value;              //Initilized
 
-                ///Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
+                //Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
                 for(k = 1; k <= 9; k ++ )
                 {
                     for(j = 11; j <= 91; j += 10)
@@ -1995,7 +2048,7 @@ Menu:
                     if(flag == 0) break;
                 }
 
-                ///Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
+                //Row-Wise Shorto puron hoyeche kina seta jachai(below-Loop)
                 for(k = 1; k <= 9; k ++ )
                 {
                     if(flag == 0) break;
@@ -2007,13 +2060,13 @@ Menu:
                         {
                             if(Sudoku[i] == k) cnt ++ ;
                         }
-                        if(cnt  !=  1) {flag = 0; break; } ///Sobgulo Number Kebol-Matro 1 bar ache kina; na thakle shorto puron hoyni
+                        if(cnt  !=  1) {flag = 0; break; } //Sobgulo Number Kebol-Matro 1 bar ache kina; na thakle shorto puron hoyni
                     }
                     if(flag == 0) break;
                 }
 
 
-                ///(3*3)-Size er Box gulote Shorto puron hoyeche kina seta jachai (below 9 Macro loop)
+                //(3*3)-Size er Box gulote Shorto puron hoyeche kina seta jachai (below 9 Macro loop)
 
                 for(k = 1; k <= 9; k ++ )
                 {
@@ -2160,11 +2213,11 @@ Menu:
 
                 TabM
 
-                ///Print the Sudoku Matrix(Below)
+                //Print the Sudoku Matrix(Below)
                 for(i = 11; i<100; i ++ )
                 {
                     //cout << Sudoku[i] << "  ";
-                    if      (Sudoku[i] == 0)           printf("%c  ", Sudoku[i]+'.'); ///'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
+                    if      (Sudoku[i] == 0)           printf("%c  ", Sudoku[i]+'.'); //'0' use korle Empty Index gulo bujhte osubidha hoy, tai '.' use korechi
                     else if (Temp  [i]==0)             printf("%c` ", Sudoku[i]+'0');
                     else                               printf("%c  ", Sudoku[i]+'0');
                     if((i%10)% 3 == 0) cout << " ";
@@ -2176,11 +2229,11 @@ Menu:
                 new new new
                 Sound
 
-                if(flag == 1){TabM cout << "   Congratulation!\n\n\n"; break; } ///jodi Shobgulo Shorto thik moto fill up hoy, tobe Ami thik moto Game sompurno korte perechi
+                if(flag == 1){TabM cout << "   Congratulation!\n\n\n"; break; } //jodi Shobgulo Shorto thik moto fill up hoy, tobe Ami thik moto Game sompurno korte perechi
 
             }
                     getch(); TabM cout << "   Congratulation\n";
-                    getch(); TabM cout << "   Congratulation\n"; /// 3 time Congratulation (not so necessary)
+                    getch(); TabM cout << "   Congratulation\n"; // 3 time Congratulation (not so necessary)
 
                     new new new getch();
                     TabM cout << "To Play Again Press-'1'\n";
@@ -2193,11 +2246,11 @@ Menu:
         }
 
 
-    case 11:  ///Head-Tail Type Cricket(Bowling First)
+    case 11:  //Head-Tail Type Cricket(Bowling First)
 
         while(1)
         {
-            string Team_1, Team_2;        ///Team 2 tir nam
+            string Team_1, Team_2;        //Team 2 tir nam
             cout << "Your Team Name    : ";      cin >> Team_1;
             cout << "Opposit Team Name : ";      cin >> Team_2;
 
@@ -2208,17 +2261,17 @@ Menu:
 
             TabM cout << "Over   : ";
             cin >> Over_Total;
-            if(Over_Total<1) goto Menu; ///if i want to close this Game
+            if(Over_Total<1) goto Menu; //if i want to close this Game
 
             TabM cout << "Wicket : ";
             cin >> Wicket_Total;
-            if(Wicket_Total<1) goto Menu; ///if i want to close this Game
+            if(Wicket_Total<1) goto Menu; //if i want to close this Game
 
             TabM2 cout << "\nEverytime Press any key from '0' to '6'  :\n\n";
 
             cout << "\nYour Bowling  :\n\n";
 
-            ///Bowling Loop (below)
+            //Bowling Loop (below)
             while(1)
             {
                 Ball ++ ;
@@ -2235,11 +2288,11 @@ Menu:
 
                 srand(time(NULL));
 
-                Com_Hit = (rand()+Temp) % 7;///Output: 0 to 6
+                Com_Hit = (rand()+Temp) % 7;//Output: 0 to 6
 
-                if(My_Hit == Com_Hit) {Wicket ++ ;Run -= Com_Hit;} ///jodi Amar Select kora songkha r Computer er Select kora songkha Same hoy tobe Wicket porbe
+                if(My_Hit == Com_Hit) {Wicket ++ ;Run -= Com_Hit;} //jodi Amar Select kora songkha r Computer er Select kora songkha Same hoy tobe Wicket porbe
 
-                Run += Com_Hit;                                   ///- r same na hole Computer er select kora songkha Run hisebe add hobe
+                Run += Com_Hit;                                   //- r same na hole Computer er select kora songkha Run hisebe add hobe
 
                 cout << "\t\t\t\t" << Ball/6 << "." << Ball % 6 << ":\t" << Run << "/" << Wicket << "(+" << Run-Run_Previous << "/" << Wicket-Wicket_Previous << ")" << endl;
                 if(Wicket == Wicket_Total || Ball == 6*Over_Total ) break;
@@ -2317,7 +2370,7 @@ Menu:
 
         break;
 
-    case 12 :  ///Head-Tail Type Cricket(Batting First)
+    case 12 :  //Head-Tail Type Cricket(Batting First)
         while(1)
         {
             string Team_1, Team_2;
@@ -2448,3 +2501,4 @@ Menu:
     goto Menu;
 
 }
+

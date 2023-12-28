@@ -485,7 +485,7 @@ Menu:
             TabM3 cout<<"  Who Play First?\n";
             TabM3 cout<< "('Player-1'/'Player-2')\n\n";
             TabM4 cout<<"Press '1' for 'Player-1' or '2' for 'Player-2'\n";
-            TabM4 cout<<"  Press 'Other Any (+ve) Number' for Tossing\n";
+            TabM4 cout<<"  Press Other 'Any Key' for Tossing\n";
             TabM3 cout<<" (Without Quatation) :\n\n";
             TabM  cout<<"   ";
 
